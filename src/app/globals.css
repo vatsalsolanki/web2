@@ -1,0 +1,239 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Tailwind v4 — register brand colors as design tokens.
+   These generate utility classes like bg-navy, text-gold, border-hairline. */
+@theme {
+  /* Gurur brand palette */
+  --color-navy: #0B1F3A;
+  --color-navy-50: #E7EBF1;
+  --color-navy-100: #C3CCD9;
+  --color-navy-200: #9FAEC3;
+  --color-navy-300: #7B8FAD;
+  --color-navy-400: #577083;
+  --color-navy-500: #335064;
+  --color-navy-600: #2A4055;
+  --color-navy-700: #1C2D49;
+  --color-navy-800: #13263B;
+  --color-navy-900: #0B1F3A;
+
+  --color-gold: #C9A24D;
+  --color-gold-50: #FBF6E9;
+  --color-gold-100: #F5E9C7;
+  --color-gold-200: #EAD496;
+  --color-gold-300: #DCBC66;
+  --color-gold-400: #C9A24D;
+  --color-gold-500: #B8912F;
+  --color-gold-600: #947425;
+  --color-gold-700: #70571C;
+  --color-gold-800: #4D3A12;
+  --color-gold-900: #291D09;
+
+  --color-warmwhite: #FAF9F6;
+  --color-slatey: #566274;
+  --color-hairline: #D8DCE3;
+
+  /* Custom font families */
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  /* Custom animations */
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 0.9s ease-out forwards;
+  --animate-seal-stamp: seal-stamp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-slide-in-right: slide-in-right 0.6s ease-out forwards;
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes seal-stamp {
+  0% { opacity: 0; transform: scale(0.6) rotate(-12deg); }
+  60% { opacity: 1; transform: scale(1.08) rotate(-2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Keep shadcn theming variables mapped */
+:root {
+  --radius: 0.25rem;
+  --background: #FAF9F6;
+  --foreground: #0B1F3A;
+  --card: #FFFFFF;
+  --card-foreground: #0B1F3A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B1F3A;
+  --primary: #0B1F3A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F3F7;
+  --secondary-foreground: #0B1F3A;
+  --muted: #F1F3F7;
+  --muted-foreground: #566274;
+  --accent: #C9A24D;
+  --accent-foreground: #0B1F3A;
+  --destructive: #B91C1C;
+  --border: #D8DCE3;
+  --input: #D8DCE3;
+  --ring: #C9A24D;
+  --chart-1: #C9A24D;
+  --chart-2: #0B1F3A;
+  --chart-3: #566274;
+  --chart-4: #DCBC66;
+  --chart-5: #947425;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0B1F3A;
+  --sidebar-primary: #0B1F3A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F3F7;
+  --sidebar-accent-foreground: #0B1F3A;
+  --sidebar-border: #D8DCE3;
+  --sidebar-ring: #C9A24D;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-warmwhite);
+    color: var(--color-navy);
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-plex-sans), system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  /* Visible focus state for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-fraunces), Georgia, serif;
+  }
+  .font-mono {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+  }
+  .font-sans {
+    font-family: var(--font-plex-sans), system-ui, sans-serif;
+  }
+
+  /* Eyebrow reference code styling */
+  .eyebrow-code {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Certificate-style frame corners */
+  .cert-frame {
+    position: relative;
+  }
+  .cert-frame::before,
+  .cert-frame::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+  .cert-frame::before {
+    top: -2px;
+    left: -2px;
+    border-top: 1.5px solid var(--color-gold);
+    border-left: 1.5px solid var(--color-gold);
+  }
+  .cert-frame::after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 1.5px solid var(--color-gold);
+    border-right: 1.5px solid var(--color-gold);
+  }
+
+  /* Filing cabinet tab */
+  .filing-tab {
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .filing-tab.active {
+    background: #FFFFFF;
+    color: var(--color-navy);
+  }
+  .filing-tab.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-gold);
+  }
+
+  /* Custom scrollbar */
+  .nice-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .nice-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .nice-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(86, 98, 116, 0.3);
+    border-radius: 3px;
+  }
+  .nice-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(86, 98, 116, 0.55);
+  }
+
+  /* Reveal-on-scroll utility */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Custom tracking utilities */
+  .tracking-widest-2 { letter-spacing: 0.18em; }
+  .tracking-widest-3 { letter-spacing: 0.25em; }
+}
