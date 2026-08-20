@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
   typescript: {
     ignoreBuildErrors: true,
   },
+
   reactStrictMode: false,
+
   images: {
     remotePatterns: [
       {
@@ -22,7 +23,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Allow the preview gateway origin for dev assets
+
   allowedDevOrigins: ["*"],
 };
+
 export default nextConfig;
