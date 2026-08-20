@@ -175,8 +175,7 @@ export default function ContactPage() {
             </h2>
             <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slatey">
               Visit us for an in-person consultation — by appointment only.
-              Replace the map below with the actual office location before
-              launch. <span className="text-gold-600">[ADD DETAILS]</span>
+             
             </p>
           </Reveal>
 

@@ -30,13 +30,7 @@ export function HomeHero() {
           className="object-cover opacity-40"
         />
         {/* Navy overlay — unified treatment across all photos */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(11,31,58,0.96) 0%, rgba(11,31,58,0.85) 45%, rgba(11,31,58,0.55) 100%)",
-          }}
-        />
+        
       </div>
 
       {/* Subtle background grid */}
@@ -50,16 +44,11 @@ export function HomeHero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto flex min-h-[88vh] max-w-8xl flex-col justify-center px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <Reveal>
-          <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-widest-3 text-gold">
-            <span className="h-px w-8 bg-gold" />
-            FILE 00 — Gurur Consultancy Services LLP
-          </div>
-        </Reveal>
+      <div className="relative mx-auto flex min-h-[88vh] max-w-8xl flex-col justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        
 
         <Reveal delay={80}>
-          <h1 className="mt-6 max-w-4xl font-serif text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl font-serif text-2xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-7xl">
             Your Business.
             <br />
             Our Expertise.
@@ -94,10 +83,14 @@ export function HomeHero() {
 
         {/* Hindi tagline */}
         <Reveal delay={220}>
-          <p className="mt-6 font-serif text-xl italic text-gold/90 sm:text-2xl">
-            {BRAND_TAGLINE_HI}
-          </p>
-        </Reveal>
+  <div className="mt-6 flex items-center gap-4">
+    <span className="h-px w-10 bg-gold" />
+    <p className="font-serif text-xl font-semibold italic text-gold sm:text-2xl">
+      {BRAND_TAGLINE_HI}
+    </p>
+    <span className="h-px w-10 bg-gold/40" />
+  </div>
+</Reveal>
 
         {/* CTAs */}
         <Reveal delay={280}>
@@ -118,30 +111,11 @@ export function HomeHero() {
           </div>
         </Reveal>
 
-        {/* Hero stats */}
-        <Reveal delay={360}>
-          <dl className="mt-12 grid max-w-md grid-cols-3 gap-4 border-t border-white/15 pt-6">
-            {HERO_STATS.map((s) => (
-              <div key={s.label}>
-                <dt className="font-serif text-3xl font-semibold text-gold sm:text-4xl">
-                  {s.value}
-                </dt>
-                <dd className="mt-1 font-mono text-[10px] uppercase leading-tight tracking-widest-2 text-white/60">
-                  {s.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
+       
       </div>
 
       {/* Bottom scroll hint */}
-      <div className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 lg:block">
-        <div className="flex flex-col items-center gap-1 font-mono text-[10px] uppercase tracking-widest-3 text-white/40">
-          <span>Scroll</span>
-          <span className="h-8 w-px bg-white/20" />
-        </div>
-      </div>
+      
     </section>
   );
 }
