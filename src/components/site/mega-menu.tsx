@@ -36,7 +36,7 @@ export function MegaMenu() {
               {cat.items.slice(0, 4).map((item) => (
                 <li key={item.code}>
                   <Link
-                    href={`/services#${cat.id}`}
+                    href={item.slug ? `/services/${item.slug}` : `/services#${cat.id}`}
                     className="block text-[12px] leading-snug text-slatey transition-colors hover:text-navy hover:underline"
                     role="menuitem"
                   >

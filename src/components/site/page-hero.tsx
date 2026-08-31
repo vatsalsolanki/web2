@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "./section-label";
@@ -15,6 +16,7 @@ export function PageHero({
   intro,
   breadcrumb,
   className,
+  children,
 }: {
   code: string;
   label: string;
@@ -22,6 +24,7 @@ export function PageHero({
   intro?: string;
   breadcrumb: { label: string; href?: string }[];
   className?: string;
+  children?: ReactNode;
 }) {
   return (
     <section
@@ -79,6 +82,8 @@ export function PageHero({
             {intro}
           </p>
         )}
+
+        {children}
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ export type ServiceItem = {
   name: string;
   description: string;
   details?: string[]; // accordion bullets, optional
+  slug?: string; // when present, links to /services/[slug] instead of /contact
 };
 
 export type ServiceCategory = {
@@ -39,36 +40,42 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           "Commencement of Business (INC-20A) filing",
           "Registered office verification (INC-22)",
         ],
+        slug: "private-limited-company",
       },
       {
         code: "REG-02",
         name: "One Person Company (OPC)",
         description:
           "A private limited company with a single founder — limited liability without the need for a co-founder.",
+        slug: "one-person-company",
       },
       {
         code: "REG-03",
         name: "LLP Registration",
         description:
           "Limited Liability Partnership — combines operational flexibility of a partnership with limited liability of a company.",
+        slug: "llp-registration",
       },
       {
         code: "REG-04",
         name: "Partnership Firm",
         description:
           "Traditional partnership with a registered deed — ideal for professional firms and family-run businesses.",
+        slug: "partnership-firm-registration",
       },
       {
         code: "REG-05",
         name: "Proprietorship",
         description:
           "Simplest form of business — single owner, minimal compliance, fast to set up.",
+        slug: "proprietorship-registration",
       },
       {
         code: "REG-06",
         name: "Section 8 Company",
         description:
           "Non-profit entity with limited liability — for charities, foundations, and social enterprises.",
+        slug: "section-8-company-registration",
       },
     ],
   },
@@ -84,78 +91,125 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "GST Registration",
         description:
           "Goods & Services Tax registration — mandatory beyond threshold turnover and for inter-state sales.",
+        slug: "gst-registration",
       },
       {
         code: "GOV-02",
         name: "MSME / Udyam Registration",
         description:
           "Unlock subsidies, easier credit, and tender preference. We file your Udyam certificate in a single working day.",
+        slug: "msme-udyam-registration",
       },
       {
         code: "GOV-03",
         name: "Startup India Recognition",
         description:
           "DPIIT recognition for eligible startups — tax benefits, easier compliance and fund-raising advantages.",
+        slug: "startup-india-recognition",
       },
       {
         code: "GOV-04",
         name: "Import Export Code (IEC)",
         description:
           "Mandatory 10-digit code issued by DGFT for any business importing or exporting goods or services from India.",
+        slug: "import-export-code-iec",
       },
       {
         code: "GOV-05",
         name: "Digital Signature Certificate (DSC)",
         description:
           "Class 3 DSC for filings with MCA, GST, Income Tax, EPFO, trade marks and tenders.",
+        slug: "digital-signature-certificate",
       },
       {
         code: "GOV-06",
         name: "FSSAI License",
         description:
           "Food Safety license — Basic, State or Central, depending on turnover and scale of food operations.",
+        slug: "fssai-registration-license",
       },
       {
-        code: "GOV-07",
-        name: "Trade License / Shop Act (Gumasta)",
+        code: "GOV-07A",
+        name: "Trade License",
         description:
           "Local municipal license authorising your business premises to operate legally.",
+        slug: "trade-license",
+      },
+      {
+        code: "GOV-07B",
+        name: "Shop & Establishment / Gumasta Registration",
+        description:
+          "State Shops & Establishments registration (Gumasta in several states) covering your premises and working-hours compliance.",
+        slug: "shop-establishment-gumasta-registration",
       },
       {
         code: "GOV-08",
         name: "Professional Tax Registration",
         description:
           "State-level tax on professionals and employers — registration and return filing support.",
+        slug: "professional-tax-registration",
       },
       {
         code: "GOV-09",
         name: "Pollution Control Board Consent",
         description:
           "Consent to Establish (CTE) and Consent to Operate (CTO) for manufacturing and process industries.",
+        slug: "pollution-control-board-consent",
       },
       {
         code: "GOV-10",
         name: "Fire NOC",
         description:
           "Fire safety certificate from the local fire department — mandatory for commercial and industrial premises.",
+        slug: "fire-noc",
       },
       {
-        code: "GOV-11",
-        name: "EPFO & ESIC Registration",
+        code: "GOV-11A",
+        name: "EPFO / PF Registration",
         description:
-          "Statutory social security registrations for employers — Provident Fund and Employee State Insurance.",
+          "Employees' Provident Fund registration and compliance for eligible employers.",
+        slug: "epfo-pf-registration",
+      },
+      {
+        code: "GOV-11B",
+        name: "ESIC Registration",
+        description:
+          "Employee State Insurance registration for eligible employers and their workforce.",
+        slug: "esic-registration",
       },
       {
         code: "GOV-12",
         name: "Labour License",
         description:
           "Shops & Establishments and Contract Labour licensing for compliant workforce management.",
+        slug: "labour-license",
       },
       {
         code: "GOV-13",
         name: "E-Way Bill Setup",
         description:
           "Configure E-way bill generation for movement of goods above the GST threshold.",
+      },
+      {
+        code: "GOV-14",
+        name: "NSIC Registration",
+        description:
+          "Single-point registration with the National Small Industries Corporation — supports MSMEs seeking government procurement preference.",
+        slug: "nsic-registration",
+      },
+      {
+        code: "GOV-15",
+        name: "PAN & TAN Services",
+        description:
+          "PAN and TAN application assistance for new entities and individuals — the base identifiers most other registrations depend on.",
+        slug: "pan-tan-services",
+      },
+      {
+        code: "GOV-16",
+        name: "LIN Certification",
+        description:
+          "Labour Identification Number certificate for establishments — applies to ordinary employers, not only NGOs.",
+        slug: "lin-certification",
       },
     ],
   },
@@ -171,6 +225,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "GeM Registration",
         description:
           "Seller registration on the Government e-Marketplace — Aadhaar/PAN, bank, and category verification included.",
+        slug: "gem-registration",
       },
       {
         code: "GEM-02",
@@ -208,6 +263,56 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "OEM Authorization",
         description:
           "Original Equipment Manufacturer authorization — authorise resellers to list your brand on GeM.",
+        slug: "oem-vendor-registration",
+      },
+      {
+        code: "GEM-07",
+        name: "Direct Purchase",
+        description:
+          "GeM's Direct Purchase order route for lower-value requirements — understand it and stay ready to fulfil it.",
+        slug: "gem-direct-purchase",
+      },
+      {
+        code: "GEM-08",
+        name: "L1 Process",
+        description:
+          "How GeM's L1 (lowest technically-qualified bid) selection works, and pricing your bid to compete on it.",
+        slug: "l1-process-gem",
+      },
+      {
+        code: "GEM-09",
+        name: "Product Listing",
+        description:
+          "Create compliant, buyer-ready product listings with correct specifications and HSN codes.",
+        slug: "product-listing",
+      },
+      {
+        code: "GEM-10",
+        name: "Service Listing",
+        description:
+          "List your services on GeM with the right category, SAC code and service-level details.",
+        slug: "service-listing",
+      },
+      {
+        code: "GEM-11",
+        name: "Brand Registration",
+        description:
+          "GeM's brand-approval workflow for OEMs before branded products can be listed.",
+        slug: "gem-brand-registration",
+      },
+      {
+        code: "GEM-12",
+        name: "GeM Training",
+        description:
+          "Practical, hands-on training for your team on registration, cataloguing and bidding on GeM.",
+        slug: "gem-training",
+      },
+      {
+        code: "GEM-13",
+        name: "One Stop Solution for GeM Portal",
+        description:
+          "A single guided path through the entire GeM journey — registration to tender participation.",
+        slug: "gem-one-stop-solution",
       },
     ],
   },
@@ -223,6 +328,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "Government Tender Participation",
         description:
           "End-to-end tender participation — registration on CPP Portal, EMD and bid submission support.",
+        slug: "tender-participation",
       },
       {
         code: "TND-02",
@@ -243,6 +349,20 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           "Grow — track record building and panel expansions",
         ],
       },
+      {
+        code: "TND-04",
+        name: "Tender Publishing",
+        description:
+          "How tenders get published on GeM/CPP Portal, and how we help you track new ones as they go live.",
+        slug: "gem-tender-publishing",
+      },
+      {
+        code: "TND-05",
+        name: "Tender Information",
+        description:
+          "Ongoing tender search, alerts and evaluation support so relevant opportunities don't slip past you.",
+        slug: "tender-information-support",
+      },
     ],
   },
   {
@@ -257,24 +377,28 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "ISO 9001 — Quality Management",
         description:
           "International standard for quality management systems — credibility with customers and tender buyers.",
+        slug: "iso-9001",
       },
       {
         code: "CERT-02",
         name: "ISO 14001 — Environmental Management",
         description:
           "Environmental management system certification — increasingly required in government procurement.",
+        slug: "iso-14001",
       },
       {
         code: "CERT-03",
         name: "ISO 27001 — Information Security",
         description:
           "Information security management — essential for IT, fintech and data-sensitive businesses.",
+        slug: "iso-27001",
       },
       {
         code: "CERT-04",
         name: "ISO 45001 — Occupational Health & Safety",
         description:
           "OH&S management system — mandatory for many construction, manufacturing and service tenders.",
+        slug: "iso-45001",
       },
       {
         code: "CERT-05",
@@ -287,18 +411,119 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "CE Certification",
         description:
           "European Conformity marking for products exported to the EU market.",
+        slug: "ce-marking",
       },
       {
         code: "CERT-07",
         name: "RoHS Compliance",
         description:
           "Restriction of Hazardous Substances compliance for electrical and electronic equipment.",
+        slug: "rohs-compliance",
       },
       {
-        code: "CERT-08",
-        name: "HACCP / GMP / GLP",
+        code: "CERT-08A",
+        name: "HACCP",
         description:
-          "Food safety and good practices certifications — for manufacturers, processors and labs.",
+          "Food safety and hazard-control system certification assistance for manufacturers and processors.",
+        slug: "haccp-certification",
+      },
+      {
+        code: "CERT-08B",
+        name: "GMP",
+        description:
+          "Good Manufacturing Practices certification assistance for consistent production quality and safety.",
+        slug: "gmp-certification",
+      },
+      {
+        code: "CERT-09",
+        name: "ISO 22000",
+        description:
+          "Food safety management system standard covering the entire food supply chain.",
+        slug: "iso-22000",
+      },
+      {
+        code: "CERT-10",
+        name: "ISO 13485",
+        description:
+          "Quality management system standard specific to medical device manufacturers.",
+        slug: "iso-13485",
+      },
+      {
+        code: "CERT-11",
+        name: "ISO 50001",
+        description:
+          "Energy management system standard for organisations reducing energy costs and impact.",
+        slug: "iso-50001",
+      },
+      {
+        code: "CERT-12",
+        name: "Organic Certification",
+        description:
+          "Certification assistance for organic farming, processing and handling operations.",
+        slug: "organic-certification",
+      },
+      {
+        code: "CERT-13",
+        name: "WHO-GMP",
+        description:
+          "WHO's specific GMP framework for pharmaceutical manufacturers, often required for export markets.",
+        slug: "who-gmp-certification",
+      },
+      {
+        code: "CERT-14",
+        name: "Kosher Certification",
+        description:
+          "Certification assistance for food businesses seeking Kosher-compliant production and supply chains.",
+        slug: "kosher-certification",
+      },
+      {
+        code: "CERT-15",
+        name: "FDA",
+        description:
+          "Support understanding and preparing US FDA registration and compliance requirements for exporters.",
+        slug: "fda-registration-support",
+      },
+      {
+        code: "CERT-16",
+        name: "FCC",
+        description:
+          "Compliance and documentation support for electronics manufacturers exporting to the US market.",
+        slug: "fcc-certification-support",
+      },
+      {
+        code: "CERT-17",
+        name: "GDP",
+        description:
+          "Good Distribution Practice certification assistance for pharmaceutical and healthcare logistics.",
+        slug: "gdp-certification",
+      },
+      {
+        code: "CERT-18",
+        name: "SA 8000",
+        description:
+          "Social accountability certification covering labour rights and workplace conditions.",
+        slug: "sa8000-certification",
+      },
+      {
+        code: "CERT-19",
+        name: "CMMI Levels",
+        description:
+          "Process-maturity appraisal support for software and technology delivery organisations.",
+        slug: "cmmi-certification",
+      },
+      {
+        code: "CERT-20",
+        name: "BIFMA Levels",
+        description:
+          "Sustainability and performance standards certification support for furniture manufacturers.",
+        slug: "bifma-certification",
+      },
+      {
+        code: "CERT-21",
+        name: "GreenGuard",
+        description:
+          "Low chemical-emission certification assistance for building products and furnishings.",
+        slug: "greenguard-certification",
       },
     ],
   },
@@ -326,6 +551,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "GS1 Barcode Registration",
         description:
           "GS1 India barcode allotment for retail-ready products and supply-chain compliance.",
+        slug: "gs1-barcode-registration",
       },
       {
         code: "IP-04",
@@ -377,6 +603,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "LIN Number Certificate",
         description:
           "Labour Identification Number for establishments — required for compliance with the e-Shram ecosystem.",
+        slug: "lin-certification",
       },
     ],
   },
@@ -392,18 +619,21 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "Project Reports",
         description:
           "Detailed DPRs for funding, expansion, MUDRA/CGTMSE loans and government scheme applications.",
+        slug: "project-report-certification",
       },
       {
         code: "DOC-02",
         name: "CA Net Worth Certificate",
         description:
           "Practising Chartered Accountant's net worth certificate — commonly required for vendor registration.",
+        slug: "net-worth-certificate",
       },
       {
         code: "DOC-03",
         name: "Turnover Certificate",
         description:
           "CA-attested turnover certificate — frequently mandatory for GeM Vendor Assessment and tender bids.",
+        slug: "turnover-certificate",
       },
       {
         code: "DOC-04",
@@ -416,6 +646,13 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         name: "Tender-specific Documentation",
         description:
           "Custom documentation packs for individual tenders — eligibility checklists, EMD, financial bid covers.",
+      },
+      {
+        code: "DOC-06",
+        name: "CA Certificates",
+        description:
+          "A single overview of the CA-attested certificates we help coordinate — net worth, turnover and audit certificates.",
+        slug: "ca-certificates",
       },
     ],
   },

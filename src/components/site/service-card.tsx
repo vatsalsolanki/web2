@@ -100,13 +100,13 @@ export function ServiceCard({
         </div>
       )}
 
-      {/* Footer CTA */}
+      {/* Footer CTA — links to the dedicated service page when one exists, else falls back to Contact */}
       <div className="mt-auto pt-4">
         <Link
-          href="/contact"
+          href={item.slug ? `/services/${item.slug}` : "/contact"}
           className="inline-flex items-center gap-1 font-sans text-[12px] font-semibold uppercase tracking-widest-2 text-navy transition-colors hover:text-gold-700"
         >
-          Learn More
+          {item.slug ? "View Details" : "Learn More"}
           <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
       </div>
