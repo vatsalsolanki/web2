@@ -790,21 +790,21 @@ export const PILLARS = [
   {
     code: "P-02",
     icon: "Receipt",
-    label: "GST & MSME",
+    label: "Business Certification",
     description: "Statutory IDs to operate and access schemes.",
     href: "/services#statutory-registrations",
   },
   {
     code: "P-03",
     icon: "Landmark",
-    label: "GeM & Procurement",
+    label: "GeM (Gov Marketplace)",
     description: "Become a verified seller on Government e-Marketplace.",
     href: "/services#gem-procurement",
   },
   {
     code: "P-04",
     icon: "Award",
-    label: "Certifications",
+    label: "Business Quility Standards Certifications",
     description: "ISO, BIS, CE — credibility that wins tenders.",
     href: "/services#certifications",
   },
@@ -832,7 +832,7 @@ export const PILLARS = [
   {
     code: "P-08",
     icon: "FolderOpen",
-    label: "Documentation",
+    label: "Documentation & Report",
     description: "Project reports, CA certificates, tender packs.",
     href: "/services#documentation-reports",
   },

@@ -55,7 +55,7 @@ export function SiteHeader() {
       <div
         className={cn(
           "mx-auto flex max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300",
-          scrolled ? "h-14" : "h-20"
+          scrolled ? "h-18" : "h-20"
         )}
       >
         {/* =========================
@@ -75,7 +75,7 @@ export function SiteHeader() {
             className={cn(
               "w-auto object-contain transition-all duration-300",
               scrolled
-                ? "h-10 sm:h-11"
+                ? "h-10 sm:h-12"
                 : "h-12 sm:h-14"
             )}
           />
@@ -100,7 +100,7 @@ export function SiteHeader() {
                   <Link
                     href={link.href}
                     className={cn(
-                      "flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors",
+                      "flex items-center gap-1.5 px-4 py-2 text-lg font-medium transition-colors",
                       active
                         ? "text-gold"
                         : "text-white/85 hover:text-white"
@@ -123,7 +123,7 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium transition-colors",
+                  "px-4 py-2 text-lg font-medium transition-colors",
                   active
                     ? "text-gold"
                     : "text-white/85 hover:text-white"

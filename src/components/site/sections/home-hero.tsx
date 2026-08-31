@@ -5,11 +5,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SealBadge } from "@/components/site/seal-badge";
 import { Reveal } from "@/components/site/reveal";
-import {
-  BRAND_TAGLINE_EN,
-  BRAND_TAGLINE_HI,
-  HERO_STATS,
-} from "@/lib/site-data";
+
+
+const BRAND_TAGLINE_HI = "आपकी सफलता में हमारा गुरुर है।"
 
 // TODO: replace with brand photography
 const HERO_IMAGE =
@@ -30,7 +28,6 @@ export function HomeHero() {
           className="object-cover opacity-40"
         />
         {/* Navy overlay — unified treatment across all photos */}
-        
       </div>
 
       {/* Subtle background grid */}
@@ -45,16 +42,13 @@ export function HomeHero() {
       />
 
       <div className="relative mx-auto flex min-h-[88vh] max-w-8xl flex-col justify-center px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        
 
         <Reveal delay={80}>
-          <h1 className="mt-6 max-w-4xl font-serif text-2xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-7xl">
-            Your Business.
-            <br />
-            Our Expertise.
-            <br />
-            <span className="text-gold">Your Growth.</span>
-          </h1>
+          <h1 className="mt-6 max-w-4xl font-serif text-2xl font-semibold leading-[1.05] text-gold sm:text-5xl lg:text-7xl">
+  आपकी सफलता में
+  <br />
+  हमारा गुरुर है।
+</h1>
         </Reveal>
 
         {/* Certificate-style frame around the tagline paragraph */}
@@ -81,17 +75,6 @@ export function HomeHero() {
           </div>
         </Reveal>
 
-        {/* Hindi tagline */}
-        <Reveal delay={220}>
-  <div className="mt-6 flex items-center gap-4">
-    <span className="h-px w-10 bg-gold" />
-    <p className="font-serif text-xl font-semibold italic text-gold sm:text-2xl">
-      {BRAND_TAGLINE_HI}
-    </p>
-    <span className="h-px w-10 bg-gold/40" />
-  </div>
-</Reveal>
-
         {/* CTAs */}
         <Reveal delay={280}>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -111,11 +94,10 @@ export function HomeHero() {
           </div>
         </Reveal>
 
-       
       </div>
 
       {/* Bottom scroll hint */}
-      
+
     </section>
   );
 }
