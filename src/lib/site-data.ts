@@ -82,7 +82,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "statutory-registrations",
     code: "GOV",
-    name: "Government & Statutory Registrations",
+    name: "Business Certification",
     intro:
       "Every registration your business needs to operate legally and access government schemes — filed correctly the first time, with renewal and compliance support built in.",
     items: [
@@ -216,7 +216,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "gem-procurement",
     code: "GEM",
-    name: "GeM & Government Procurement",
+    name: "GeM (Gov Marketplace)",
     intro:
       "Become a verified, sell-ready seller on the Government e-Marketplace (GeM) — from registration and cataloguing to vendor assessment and OEM authorization.",
     items: [
@@ -368,7 +368,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "certifications",
     code: "CERT",
-    name: "Certifications & Quality Standards",
+    name: "Business Quality Standards Certifications",
     intro:
       "Certifications that signal quality and unlock tender eligibility — ISO management systems, BIS, CE, RoHS and food safety standards.",
     items: [
@@ -530,7 +530,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: "trademark-ip-branding",
     code: "IP",
-    name: "Trademark, IP & Branding",
+    name: "Trademark & Branding",
     intro:
       "Protect and present your brand — trademark registration, copyright, barcodes and brand identity design.",
     items: [
@@ -840,13 +840,13 @@ export const PILLARS = [
 
 // [ADD DETAILS] — client to replace placeholders below
 export const CONTACT_DETAILS = {
-  phone: "+91 [ADD DETAILS]",
-  phoneHref: "tel:+910000000000",
-  whatsapp: "+91 [ADD DETAILS]",
-  whatsappHref: "https://wa.me/910000000000",
-  email: "[ADD DETAILS]@gururconsultancy.in",
-  emailHref: "mailto:[ADD DETAILS]@gururconsultancy.in",
-  address: "[ADD DETAILS], Business District, City, State — 000000",
+  phone: "+91 6352256220",
+  phoneHref: "tel:+916352256220",
+  whatsapp: "+91 6352256220",
+  whatsappHref: "https://wa.me/916352256220",
+  email: "info@gurur.com",
+  emailHref: "mailto:info@gurur.com",
+  address: "444 - Memnagar Road, Near Swami Vivekanand Chowk, New Gurukul, Memnagar, Ahmedabad, Gujarat, 380052",
   hours: "Mon – Sat · 10:00 AM – 7:00 PM IST",
   mapEmbedSrc:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.076786987643!2d77.20766031508255!3d28.61391938242479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347e9a1f%3A0xa23b6d1f0d68f4dc!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000",

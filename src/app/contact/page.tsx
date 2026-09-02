@@ -155,10 +155,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <p className="font-mono text-[10px] uppercase tracking-widest-2 text-slatey">
-                  [ADD DETAILS] — Replace all placeholder phone / email /
-                  address values before launch.
-                </p>
+              
               </div>
             </Reveal>
           </div>

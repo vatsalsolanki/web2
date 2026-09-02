@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -43,20 +44,19 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand blurb */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3">
-              <span className="relative flex h-10 w-10 items-center justify-center border border-gold/40">
-                <span className="font-serif text-xl font-semibold text-gold">G</span>
-                <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 bg-gold" />
-              </span>
-              <div>
-                <div className="font-serif text-base font-semibold leading-tight">
-                  GURUR CONSULTANCY
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-widest-3 text-gold/90">
-                  Services LLP
-                </div>
-              </div>
-            </div>
+            <Link
+              href="/"
+              aria-label="Gurur Consultancy — Home"
+              className="inline-flex items-center"
+            >
+              <Image
+                src="/logo.png"
+                alt="Gurur Consultancy"
+                width={200}
+                height={80}
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
 
             <p className="mt-5 font-serif text-lg leading-snug text-white/90">
               Your Business.

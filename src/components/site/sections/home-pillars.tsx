@@ -4,7 +4,7 @@ import { SectionLabel } from "../section-label";
 import { Reveal } from "../reveal";
 import { Icon } from "../icon";
 import { PILLARS } from "@/lib/site-data";
-
+import Image from "next/image";
 /**
  * HomePillars — "A Complete Business Solution Under One Roof" intro + 8-card grid.
  */
@@ -27,33 +27,48 @@ export function HomePillars() {
         </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-px border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
-          {PILLARS.map((p, i) => (
-            <Reveal key={p.code} delay={(i % 4) * 60}>
-              <Link
-                href={p.href}
-                className="group relative flex h-full flex-col bg-white p-6 transition-all hover:bg-navy"
-              >
-                {/* hover gold rule */}
-                <span className="absolute left-0 top-0 h-0.5 w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-                <div className="flex items-center justify-between">
-                  <span className="eyebrow-code text-gold-600">{p.code}</span>
-                  <ArrowUpRight
-                    className="h-4 w-4 text-slatey/40 transition-colors group-hover:text-gold"
-                  />
-                </div>
-                <div className="mt-4 inline-flex h-12 w-12 items-center justify-center border border-hairline text-navy transition-colors group-hover:border-gold/60 group-hover:text-gold">
-                  <Icon name={p.icon} className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 font-serif text-lg font-semibold text-navy transition-colors group-hover:text-white">
-                  {p.label}
-                </h3>
-                <p className="mt-2 font-sans text-[13px] leading-relaxed text-slatey transition-colors group-hover:text-white/70">
-                  {p.description}
-                </p>
-              </Link>
-            </Reveal>
-          ))}
+  {PILLARS.map((p, i) => (
+    <Reveal key={p.code} delay={(i % 4) * 60}>
+      <Link
+        href={p.href}
+        className="group relative flex h-full flex-col bg-white p-6 transition-all hover:bg-navy"
+      >
+        {/* Logo badge */}
+        <div className="absolute right-4 top-4 flex h-16 w-16 items-center justify-center bg-white  transition-all group-hover:border-gold/60  group-hover:bg-navy">
+          <Image
+            src="/logo.png"
+            alt="Gurur Consultancy"
+            width={40}
+            height={40}
+            className="h-full w-full object-contain"
+          />
         </div>
+
+        {/* hover gold rule */}
+        <span className="absolute left-0 top-0 h-0.5 w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+
+        <div className="flex items-center justify-between">
+          <span className="eyebrow-code text-gold-600">{p.code}</span>
+          <ArrowUpRight
+            className="h-4 w-4 text-slatey/40 transition-colors group-hover:text-gold"
+          />
+        </div>
+
+        <div className="mt-4 inline-flex h-12 w-12 items-center justify-center border border-hairline text-navy transition-colors group-hover:border-gold/60 group-hover:text-gold">
+          <Icon name={p.icon} className="h-5 w-5" />
+        </div>
+
+        <h3 className="mt-4 font-serif text-lg font-semibold text-navy transition-colors group-hover:text-white">
+          {p.label}
+        </h3>
+
+        <p className="mt-2 font-sans text-[13px] leading-relaxed text-slatey transition-colors group-hover:text-white/70">
+          {p.description}
+        </p>
+      </Link>
+    </Reveal>
+  ))}
+</div>
       </div>
     </section>
   );

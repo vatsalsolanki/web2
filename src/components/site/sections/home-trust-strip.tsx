@@ -22,7 +22,6 @@ export function HomeTrustStrip() {
                 </div>
                 <div className="font-mono text-[9px] uppercase tracking-widest-2 text-slatey">
                   {b.label}{" "}
-                  <span className="text-gold-600/70">[UPDATE STAT]</span>
                 </div>
               </div>
             </li>

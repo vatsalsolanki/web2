@@ -36,7 +36,7 @@ export function CTABand({
 
       <div className="relative mx-auto max-w-8xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         {/* Large seal — stamped in on scroll */}
-        <div className="pointer-events-none absolute right-[-40px] top-1/2 hidden -translate-y-1/2 text-gold lg:block">
+        <div className="pointer-events-none absolute right-[20px] top-1/2 hidden -translate-y-1/2 text-gold lg:block">
           <Reveal>
             <SealBadge size="lg" animated className="opacity-90" />
           </Reveal>

@@ -40,10 +40,10 @@ export function ProcessTimeline({
           {i < steps.length - 1 && (
             <div
               className={cn(
-                "absolute left-7 top-4 hidden h-px md:block",
+                "absolute left-10 top-7 hidden h-px md:block",
                 dark ? "bg-white/20" : "bg-hairline",
               )}
-              style={{ width: "calc(100% - 2rem)" }}
+              style={{ width: "calc(100% - 1rem)" }}
             />
           )}
 

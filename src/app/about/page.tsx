@@ -103,9 +103,7 @@ export default function AboutPage() {
                     }}
                   />
                   <div className="absolute bottom-4 left-4 text-white">
-                    <p className="font-mono text-[10px] uppercase tracking-widest-2 text-gold">
-                      [ OUR TEAM ]
-                    </p>
+                    
                     <p className="font-serif text-lg">Registered. Certified. Trusted.</p>
                   </div>
                 </div>

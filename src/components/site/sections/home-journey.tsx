@@ -42,7 +42,7 @@ export function HomeJourney() {
                 {/* horizontal connector — desktop xl only */}
                 {i < JOURNEY_STEPS.length - 1 && (
                   <span
-                    className="absolute left-7 top-3 hidden h-px w-[calc(100%-1rem)] bg-white/15 xl:block"
+                    className="absolute left-7 top-7 hidden h-px w-[calc(100%-1rem)] bg-white/15 xl:block"
                     aria-hidden="true"
                   />
                 )}
