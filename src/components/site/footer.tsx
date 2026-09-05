@@ -147,7 +147,7 @@ export function SiteFooter() {
             </ul>
 
             {/* Socials */}
-            <div className="mt-5 flex items-center gap-2">
+            {/* <div className="mt-5 flex items-center gap-2">
               {SOCIALS.map((s) => (
                 <a
                   key={s.label}
@@ -158,7 +158,7 @@ export function SiteFooter() {
                   <s.icon className="h-4 w-4" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

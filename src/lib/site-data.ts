@@ -684,7 +684,8 @@ export const WHY_CHOOSE_GURUR = [
     code: "W-02",
     icon: "Compass",
     title: "Practical Guidance",
-    short: "Plain-language advice from people who have filed thousands of cases.",
+    short:
+      "Plain-language advice from people who have filed thousands of cases.",
     full: "We translate government rules into clear next steps. You'll always know what's mandatory, what's optional, and what's worth your time and money — no jargon, no guesswork.",
   },
   {
@@ -731,15 +732,51 @@ export const WHO_WE_SUPPORT = [
 
 // 9-step journey on Home — "From Business Idea to Government Contract"
 export const JOURNEY_STEPS = [
-  { num: "01", title: "Business Setup", desc: "Choose the right structure for your goals." },
-  { num: "02", title: "Registration", desc: "Incorporate and obtain all statutory IDs." },
-  { num: "03", title: "Compliance", desc: "GST, MSME, labour, tax — set up and active." },
-  { num: "04", title: "Certification", desc: "ISO, BIS and industry-specific certifications." },
-  { num: "05", title: "GeM", desc: "Register as a verified government seller." },
-  { num: "06", title: "Catalog", desc: "List your products and services on GeM." },
-  { num: "07", title: "Vendor Assessment", desc: "Qualify for higher-value procurement." },
-  { num: "08", title: "Tender Participation", desc: "Discover, qualify and submit winning bids." },
-  { num: "09", title: "Government Contract", desc: "Win and execute the contract — and grow." },
+  {
+    num: "01",
+    title: "Business Setup",
+    desc: "Choose the right structure for your goals.",
+  },
+  {
+    num: "02",
+    title: "Registration",
+    desc: "Incorporate and obtain all statutory IDs.",
+  },
+  {
+    num: "03",
+    title: "Compliance",
+    desc: "GST, MSME, labour, tax — set up and active.",
+  },
+  {
+    num: "04",
+    title: "Certification",
+    desc: "ISO, BIS and industry-specific certifications.",
+  },
+  {
+    num: "05",
+    title: "GeM",
+    desc: "Register as a verified government seller.",
+  },
+  {
+    num: "06",
+    title: "Catalog",
+    desc: "List your products and services on GeM.",
+  },
+  {
+    num: "07",
+    title: "Vendor Assessment",
+    desc: "Qualify for higher-value procurement.",
+  },
+  {
+    num: "08",
+    title: "Tender Participation",
+    desc: "Discover, qualify and submit winning bids.",
+  },
+  {
+    num: "09",
+    title: "Government Contract",
+    desc: "Win and execute the contract — and grow.",
+  },
 ];
 
 // 5-step process band — "Understand → Prepare → Apply → Follow Up → Complete"
@@ -782,56 +819,56 @@ export const HERO_STATS = [
 export const PILLARS = [
   {
     code: "P-01",
-    icon: "Building2",
+    image: "/BR.png",
     label: "Business Registration",
     description: "Company, LLP, OPC, Partnership — set up right.",
     href: "/services#business-registration",
   },
   {
     code: "P-02",
-    icon: "Receipt",
+    image: "/BC.png",
     label: "Business Certification",
     description: "Statutory IDs to operate and access schemes.",
     href: "/services#statutory-registrations",
   },
   {
     code: "P-03",
-    icon: "Landmark",
+    image: "/GEM.png",
     label: "GeM (Gov Marketplace)",
     description: "Become a verified seller on Government e-Marketplace.",
     href: "/services#gem-procurement",
   },
   {
     code: "P-04",
-    icon: "Award",
+    image: "/QSC.png",
     label: "Business Quility Standards Certifications",
     description: "ISO, BIS, CE — credibility that wins tenders.",
     href: "/services#certifications",
   },
   {
     code: "P-05",
-    icon: "FileCheck",
+    image: "/T.png",
     label: "Tenders",
     description: "Discover, qualify and win government bids.",
     href: "/services#government-tenders",
   },
   {
     code: "P-06",
-    icon: "Stamp",
+    image: "/TB.png",
     label: "Trademark & Branding",
     description: "Protect and present your brand identity.",
     href: "/services#trademark-ip-branding",
   },
   {
     code: "P-07",
-    icon: "HeartHandshake",
+    image: "/NGO.png",
     label: "NGO / CSR",
     description: "Run a compliant, fundable non-profit.",
     href: "/services#ngo-csr-services",
   },
   {
     code: "P-08",
-    icon: "FolderOpen",
+    image: "/DR.png",
     label: "Documentation & Report",
     description: "Project reports, CA certificates, tender packs.",
     href: "/services#documentation-reports",
@@ -844,9 +881,10 @@ export const CONTACT_DETAILS = {
   phoneHref: "tel:+916352256220",
   whatsapp: "+91 6352256220",
   whatsappHref: "https://wa.me/916352256220",
-  email: "info@gurur.com",
-  emailHref: "mailto:info@gurur.com",
-  address: "444 - Memnagar Road, Near Swami Vivekanand Chowk, New Gurukul, Memnagar, Ahmedabad, Gujarat, 380052",
+  email: "info@gurur.in",
+  emailHref: "mailto:info@gurur.in",
+  address:
+    "444 - Memnagar Road, Near Swami Vivekanand Chowk, New Gurukul, Memnagar, Ahmedabad, Gujarat, 380052",
   hours: "Mon – Sat · 10:00 AM – 7:00 PM IST",
   mapEmbedSrc:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.076786987643!2d77.20766031508255!3d28.61391938242479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347e9a1f%3A0xa23b6d1f0d68f4dc!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000",

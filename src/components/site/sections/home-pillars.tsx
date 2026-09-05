@@ -31,18 +31,9 @@ export function HomePillars() {
     <Reveal key={p.code} delay={(i % 4) * 60}>
       <Link
         href={p.href}
-        className="group relative flex h-full flex-col bg-white p-6 transition-all hover:bg-navy"
+        className="group relative flex h-full flex-col bg-white p-6 transition-all "
       >
-        {/* Logo badge */}
-        <div className="absolute right-4 top-4 flex h-16 w-16 items-center justify-center bg-white  transition-all group-hover:border-gold/60  group-hover:bg-navy">
-          <Image
-            src="/logo.png"
-            alt="Gurur Consultancy"
-            width={40}
-            height={40}
-            className="h-full w-full object-contain"
-          />
-        </div>
+        
 
         {/* hover gold rule */}
         <span className="absolute left-0 top-0 h-0.5 w-0 bg-gold transition-all duration-300 group-hover:w-full" />
@@ -54,15 +45,21 @@ export function HomePillars() {
           />
         </div>
 
-        <div className="mt-4 inline-flex h-12 w-12 items-center justify-center border border-hairline text-navy transition-colors group-hover:border-gold/60 group-hover:text-gold">
-          <Icon name={p.icon} className="h-5 w-5" />
-        </div>
+        <div className="mt-4 inline-flex h-24 w-24 items-center justify-center border border-hairline transition-colors group-hover:border-gold/60">
+  <Image
+    src={p.image}
+    alt={p.label}
+    width={64}
+    height={64}
+    className="object-cover"
+  />
+</div>
 
-        <h3 className="mt-4 font-serif text-lg font-semibold text-navy transition-colors group-hover:text-white">
+        <h3 className="mt-4 font-serif text-lg font-semibold text-navy transition-color">
           {p.label}
         </h3>
 
-        <p className="mt-2 font-sans text-[13px] leading-relaxed text-slatey transition-colors group-hover:text-white/70">
+        <p className="mt-2 font-sans text-[13px] leading-relaxed text-slatey transition-colors ">
           {p.description}
         </p>
       </Link>
