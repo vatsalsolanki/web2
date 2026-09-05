@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "CSR Registration",
   ],
   authors: [{ name: "Gurur Consultancy Services LLP" }],
-  metadataBase: new URL("https://gururconsultancy.example.com"),
+  metadataBase: new URL("https://gurur.in"),
   openGraph: {
     title: "Gurur Consultancy Services LLP",
     description:
