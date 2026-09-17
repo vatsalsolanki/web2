@@ -833,7 +833,7 @@ export const PILLARS = [
   },
   {
     code: "P-03",
-    image: "/GEM.png",
+    image: "/GEM.jpeg",
     label: "GeM (Gov Marketplace)",
     description: "Become a verified seller on Government e-Marketplace.",
     href: "/services#gem-procurement",

@@ -31,6 +31,9 @@ export function ContactForm({ className }: { className?: string }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
+  // Distinguishes "please fix the highlighted fields" (client validation)
+  // from a real submit failure (network/server), which needs its own message.
+  const [serverError, setServerError] = useState<string | null>(null);
 
   function update<K extends keyof FormState>(key: K, val: FormState[K]) {
     setValues((v) => ({ ...v, [key]: val }));
@@ -55,18 +58,39 @@ export function ContactForm({ className }: { className?: string }) {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setServerError(null);
+
     const errs = validate();
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
       setStatus("error");
       return;
     }
+
     setStatus("loading");
-    // Placeholder submit handler — no backend required.
-    // Replace with API call when backend is ready.
-    await new Promise((r) => setTimeout(r, 900));
-    setStatus("success");
-    setValues(EMPTY);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+      setValues(EMPTY);
+    } catch (err) {
+      setErrors({});
+      setServerError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -238,8 +262,10 @@ export function ContactForm({ className }: { className?: string }) {
 
       {status === "error" && (
         <p className="mt-4 flex items-center gap-2 font-sans text-sm text-destructive">
-          <AlertCircle className="h-4 w-4" /> Please fix the highlighted fields
-          and try again.
+          <AlertCircle className="h-4 w-4" />
+          {serverError
+            ? serverError
+            : "Please fix the highlighted fields and try again."}
         </p>
       )}
     </form>
